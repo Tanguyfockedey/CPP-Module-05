@@ -6,13 +6,16 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:37:45 by tafocked          #+#    #+#             */
-/*   Updated: 2025/01/14 19:45:34 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:07:31 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
+#include "Form.hpp"
+
+class Form;
 
 class Bureaucrat
 {
@@ -37,7 +40,7 @@ class Bureaucrat
 		int			getGrade() const;
 		void		incGrade();
 		void		decGrade();
-		void		signForm() const;
+		void		signForm(Form &form);
 
 		/* Exceptions */
 		class GradeTooHighException: public std::exception
