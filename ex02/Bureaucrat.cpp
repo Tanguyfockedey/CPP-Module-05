@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:36:27 by tafocked          #+#    #+#             */
-/*   Updated: 2025/04/10 15:46:15 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 16:24:23 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ void Bureaucrat::decGrade()
 		throw(GradeTooLowException());
 }
 
-void Bureaucrat::signForm(Form &form)
+void Bureaucrat::signForm(AForm &form)
 {
 	try
 	{
@@ -82,6 +82,18 @@ void Bureaucrat::signForm(Form &form)
 	catch(const std::exception& e)
 	{
 		std::cout << this->_name << " could not sign " << form.getName() << " because the grade is too low" << std::endl;
+	}
+}
+
+void Bureaucrat::executeForm(const AForm &form)
+{
+	try
+	{
+		form.execute(*this);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << this->_name << " could not execute " << form.getName() << " : " << e.what() << std::endl;
 	}
 	
 }

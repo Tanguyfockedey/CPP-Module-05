@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:55:28 by tafocked          #+#    #+#             */
-/*   Updated: 2025/04/10 15:25:00 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/04/10 15:44:36 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,10 +56,29 @@ int main(void)
 		{
 			Bureaucrat jon("Jon", 35);
 			Form form2("C_303", 20, 45);
-			std::cout << jon << std::endl;
-			std::cout << form2 << std::endl;
+			// std::cout << jon << std::endl;
+			// std::cout << form2 << std::endl;
 			jon.signForm(form2);
-			std::cout << form2 << std::endl;
+			// std::cout << form2 << std::endl;
+		}
+		catch (std::exception &e)
+		{
+			std::cout << e.what() << std::endl;
+		}
+	}
+
+	std::cout << "\n --------------------- \n\n";
+
+	/* Create form and try to sign it but the grade is not enough */
+	{
+		try
+		{
+			Bureaucrat jon("Jon", 35);
+			Form form2("C_303", 20, 45);
+			// std::cout << jon << std::endl;
+			// std::cout << form2 << std::endl;
+			form2.beSigned(jon);
+			// std::cout << form2 << std::endl;
 		}
 		catch (std::exception &e)
 		{
