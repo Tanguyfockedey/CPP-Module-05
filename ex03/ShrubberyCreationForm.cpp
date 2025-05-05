@@ -6,11 +6,13 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:06:10 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 16:33:33 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 22:04:56 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 ShrubberyCreationForm::ShrubberyCreationForm():
 	AForm::AForm("ShrubberyCreationForm", 145, 137), _target("default")
@@ -43,12 +45,24 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationF
 	return (*this);
 }
 
-void ShrubberyCreationForm::beExecuted(const Bureaucrat &exector) const
+const std::string &ShrubberyCreationForm::getTarget() const
+{
+	return (this->_target);
+}
+
+void ShrubberyCreationForm::beExecuted(const Bureaucrat &executor) const
 {
 	std::ofstream file;
 
 	file.open((this->_target + "_shrubbery").c_str());
 	file << TREE;
 	file.close();
-	std::cout << exector.getName() << " created a shrubbery tree !" << std::endl;
+	std::cout << executor.getName() << " created a shrubbery tree !" << std::endl;
+}
+
+AForm *ShrubberyCreationForm::makeForm(AForm *form, const std::string &type, const std::string &target)
+{
+	if (form == NULL && type == "ShrubberyCreationForm")
+		return (new ShrubberyCreationForm(target));
+	return (form);
 }

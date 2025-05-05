@@ -6,10 +6,11 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:36:27 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 16:24:23 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:47:54 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "AForm.hpp"
 #include "Bureaucrat.hpp"
 
 Bureaucrat::Bureaucrat():

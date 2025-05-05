@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:26:06 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 18:21:33 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 22:21:25 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,8 @@ class AForm
 
 		/* Member functions */
 		const std::string	getName() const;
-		bool	getSigned() const;
-		int	getGradeSign() const;
+		bool getSigned() const;
+		int getGradeSign() const;
 		int getGradeExec() const;
 
 		void execute(const Bureaucrat &executor) const;

@@ -6,16 +6,16 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:26:06 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 18:46:19 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 22:22:02 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
-#include "Bureaucrat.hpp"
 
 class Bureaucrat;
+
 
 class AForm
 {
@@ -32,21 +32,22 @@ class AForm
 		AForm(const AForm &copy);
 
 		/* Destr */
-		~AForm();
+		virtual ~AForm();
 
 		/* Operator overload */
 		AForm &operator=(const AForm &copy);
 
 		/* Member functions */
 		const std::string	getName() const;
-		bool	getSigned() const;
-		int	getGradeSign() const;
+		bool getSigned() const;
+		int getGradeSign() const;
 		int getGradeExec() const;
-		virtual std::string getTarget() const;
+		virtual const std::string &getTarget() const;
 
 		void execute(const Bureaucrat &executor) const;
 		void beSigned(const Bureaucrat &bureaucrat);
 		virtual void beExecuted(const Bureaucrat &executor) const = 0;
+		static AForm *makeForm(const std::string &type, const std::string &target);
 
 		/* Exceptions */
 		class GradeTooHighException: public std::exception

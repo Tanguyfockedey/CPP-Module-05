@@ -6,11 +6,13 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 13:59:08 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 18:43:25 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 22:04:25 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 RobotomyRequestForm::RobotomyRequestForm():
 	AForm::AForm("RobotomyRequestForm", 72, 45), _target("default")
@@ -43,6 +45,11 @@ RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &c
 	return (*this);
 }
 
+const std::string &RobotomyRequestForm::getTarget() const
+{
+	return (this->_target);
+}
+
 void RobotomyRequestForm::beExecuted(const Bureaucrat &executor) const
 {
 	srand(time(0));
@@ -51,4 +58,11 @@ void RobotomyRequestForm::beExecuted(const Bureaucrat &executor) const
 		std::cout << _target << " has been robotomized by " << executor.getName() << std::endl;
 	else
 		std::cout << _target << " has NOT been robotomized !" << std::endl;
+}
+
+AForm *RobotomyRequestForm::makeForm(AForm *form, const std::string &type, const std::string &target)
+{
+	if (form == NULL && type == "RobotomyRequestForm")
+		return (new RobotomyRequestForm(target));
+	return (form);
 }

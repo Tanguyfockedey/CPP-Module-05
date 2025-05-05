@@ -6,14 +6,13 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 16:37:45 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 14:36:35 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:46:18 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <string>
 #include <iostream>
-#include "AForm.hpp"
 
 class AForm;
 

@@ -6,11 +6,15 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:26:04 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 18:35:09 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 21:54:42 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AForm.hpp"
+#include "Bureaucrat.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
 
 AForm::AForm():
 	_name("Default"), _signed(false), _gradeSign(1), _gradeExec(150)
@@ -85,6 +89,17 @@ void AForm::beSigned(const Bureaucrat &Bureaucrat)
 		_signed = true;
 	else
 		throw (GradeTooLowException());
+}
+
+AForm *AForm::makeForm(const std::string &type, const std::string &target)
+{
+	AForm *form;
+
+	form = NULL;
+	form = PresidentialPardonForm::makeForm(form, type, target);
+	form = RobotomyRequestForm::makeForm(form, type, target);
+	form = ShrubberyCreationForm::makeForm(form, type, target);
+	return (form);
 }
 
 const char *AForm::GradeTooHighException::what() const throw()

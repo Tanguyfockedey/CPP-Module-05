@@ -6,11 +6,13 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:08:03 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 17:21:57 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/05 22:03:39 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
+#include "AForm.hpp"
+#include "Bureaucrat.hpp"
 
 PresidentialPardonForm::PresidentialPardonForm():
 	AForm::AForm("PresidentialPardonForm", 25, 5), _target("default")
@@ -43,8 +45,20 @@ PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPard
 	return (*this);
 }
 
+const std::string &PresidentialPardonForm::getTarget() const
+{
+	return (this->_target);
+}
+
 void PresidentialPardonForm::beExecuted(const Bureaucrat &executor) const
 {
 	(void)executor;
 	std::cout << _target << " has been pardoned by Zaphod Beeblebrox !" << std::endl;
+}
+
+AForm *PresidentialPardonForm::makeForm(AForm *form, const std::string &type, const std::string &target)
+{
+	if (form == NULL && type == "PreseidentialPardonForm")
+		return (new PresidentialPardonForm(target));
+	return (form);
 }
