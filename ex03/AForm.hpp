@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/14 19:26:06 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 22:22:02 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/06 20:59:33 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class AForm
 		bool getSigned() const;
 		int getGradeSign() const;
 		int getGradeExec() const;
-		virtual const std::string &getTarget() const;
+		virtual const std::string &getTarget() const = 0;
 
 		void execute(const Bureaucrat &executor) const;
 		void beSigned(const Bureaucrat &bureaucrat);

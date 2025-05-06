@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 16:06:10 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 22:04:56 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/06 23:18:17 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ ShrubberyCreationForm::ShrubberyCreationForm():
 ShrubberyCreationForm::ShrubberyCreationForm(const std::string target):
 	AForm::AForm("ShrubberyCreationForm", 145, 137), _target(target)
 {
-	std::cout << "ShrubberyCreationFrom called" << std::endl;
+	std::cout << "ShrubberyCreationForm called" << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy):
