@@ -6,7 +6,7 @@
 #    By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/20 16:37:10 by tafocked          #+#    #+#              #
-#    Updated: 2025/05/05 17:28:02 by tafocked         ###   ########.fr        #
+#    Updated: 2025/05/07 15:05:37 by tafocked         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,9 +15,9 @@ NAME	= run
 FILES	= main.cpp \
 			AForm.cpp \
 			Bureaucrat.cpp \
-			ShrubberyCreationForm.cpp \
+			PresidentialPardonForm.cpp \
 			RobotomyRequestForm.cpp \
-			PresidentialPardonForm.cpp
+			ShrubberyCreationForm.cpp \
 
 CC		= c++
 CFLAGS	= -Wall -Wextra -Werror -std=c++98 -pedantic -g3

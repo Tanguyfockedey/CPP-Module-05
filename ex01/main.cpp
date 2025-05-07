@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:55:28 by tafocked          #+#    #+#             */
-/*   Updated: 2025/04/10 15:44:36 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:03:32 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,8 @@ int main(void)
 		{
 			Bureaucrat jon("Jon", 35);
 			Form form2("C_303", 20, 45);
-			// std::cout << jon << std::endl;
-			// std::cout << form2 << std::endl;
+			std::cout << jon << std::endl;
+			std::cout << form2 << std::endl;
 			jon.signForm(form2);
 			// std::cout << form2 << std::endl;
 		}
@@ -75,8 +75,8 @@ int main(void)
 		{
 			Bureaucrat jon("Jon", 35);
 			Form form2("C_303", 20, 45);
-			// std::cout << jon << std::endl;
-			// std::cout << form2 << std::endl;
+			std::cout << jon << std::endl;
+			std::cout << form2 << std::endl;
 			form2.beSigned(jon);
 			// std::cout << form2 << std::endl;
 		}

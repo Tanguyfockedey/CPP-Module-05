@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/10 14:55:28 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 18:30:25 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:08:12 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ int main(void)
 			std::cout << robotomy << std::endl;
 			std::cout << pardon << std::endl;
 			shrubbery.beSigned(jon);
+			std::cout << shrubbery << std::endl;
 			mike.executeForm(shrubbery);
 		}
 		catch (std::exception &e)
