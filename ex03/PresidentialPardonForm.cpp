@@ -6,7 +6,7 @@
 /*   By: tafocked <tafocked@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/05 17:08:03 by tafocked          #+#    #+#             */
-/*   Updated: 2025/05/05 22:03:39 by tafocked         ###   ########.fr       */
+/*   Updated: 2025/05/07 15:16:21 by tafocked         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ void PresidentialPardonForm::beExecuted(const Bureaucrat &executor) const
 
 AForm *PresidentialPardonForm::makeForm(AForm *form, const std::string &type, const std::string &target)
 {
-	if (form == NULL && type == "PreseidentialPardonForm")
+	if (form == NULL && type == "PresidentialPardonForm")
 		return (new PresidentialPardonForm(target));
 	return (form);
 }
